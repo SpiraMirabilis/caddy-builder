@@ -7,6 +7,12 @@ Use either as a build container, when run it checks /output/ volume for a plugin
 
 >$ docker run --rm -v $(pwd):/output/ caddy-builder  
 
+To give a list of plugins without having to create your own plugins.go file, send a comma delimeted list of plugins:
+
+
+>$ docker run --rm -v $(pwd):/output/ caddy-builder cors,dnsproviders\/azure,hugo
+
+All this does is loop through the sample plugins.go and uncomment any line that matches each word, but it works for now.
 
 This image can also be used a template for multistage Docker builds, in that case you should create a directory with a `Dockerfile` and a `plugins.go` file where you must code the plugin paths of your plugins you want to have in your caddy server. A simple example is below:
 

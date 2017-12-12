@@ -13,4 +13,5 @@ ONBUILD RUN cd github.com/mholt/caddy/caddy  && git fetch && git reset origin/ma
     && git checkout -q ${CADDY_VERSION} \
     && go run build.go goos=linux && cp /go/src/github.com/mholt/caddy/caddy/caddy /output/caddy
 VOLUME "/output"
-ENTRYPOINT "/app/build_caddy.sh"
+ENTRYPOINT ["/app/build_caddy.sh"]
+CMD []
