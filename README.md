@@ -17,6 +17,3 @@ This image can also be used a template for multistage Docker builds, in that cas
 >EXPOSE 80 443 2015  
 >ENTRYPOINT ["/usr/bin/caddy"]  
 >CMD ["--conf", "/conf/Caddyfile"]  
-
-
-As an example you can take a look at my [caddy-http](https://github.com/ulrichSchreiner/caddy-http) repository where i build a caddy server with the `prometheus` and a `git` plugin.
